@@ -35,12 +35,13 @@ return {
 					"dockerls",
 					"dotls",
 					"html",
+					"cssls",
 					"biome",
 					"marksman",
 					"tailwindcss",
 					"templ",
 					"biome",
-					"tsserver",
+					-- "tsserver",
 				},
 			})
 		end,
@@ -53,8 +54,9 @@ return {
 			lspconfig.gopls.setup({ capabilities = capabilities })
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.biome.setup({ capabilities = capabilities, filetype = { "ts", "js" } })
-			lspconfig.tsserver.setup({ capabilities = capabilities, filetype = { "ts", "js" } })
+			-- lspconfig.tsserver.setup({ capabilities = capabilities, filetype = { "ts", "js" } })
 			lspconfig.templ.setup({ capabilities = capabilities, filetype = { "html", "templ" } })
+			lspconfig.cssls.setup({ capabilities = capabilities, filetype = { "html", "templ", "css" } })
 			lspconfig.cmake.setup({ capabilities = capabilities })
 			lspconfig.tailwindcss.setup({
 				capabilities = capabilities,
@@ -82,6 +84,7 @@ return {
 					lua = { "stylua" },
 					c = { "clang-format" },
 					templ = { "templ" },
+					html = { { "prettier" } },
 					javascript = { { "prettierd", "prettier", "biome" } },
 					typescript = { { "prettierd", "prettier", "biome" } },
 					go = { "gofmt", "gofumpt", "goimports", "goimports-reviser", "golines" },

@@ -1,5 +1,7 @@
 vim.g.completopt = "menu, noselect, menuone,"
 vim.opt.mouse = "a"
+vim.opt.conceallevel = 2
+vim.opt.concealcursor = ""
 vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 vim.opt.foldenable = false
 vim.opt.swapfile = false
